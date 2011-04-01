@@ -23,7 +23,7 @@ use Getopt::Long;
 use Pod::MinimumVersion;
 
 use vars '$VERSION';
-$VERSION = 49;
+$VERSION = 50;
 
 my $want_stdin = 1;
 my $want_all = 1;
@@ -63,12 +63,12 @@ sub report {
     print "$report->{'filename'}:$report->{'linenum'}: $report->{'version'} for $report->{'why'}\n";
   }
 }
-  
+
 exit 0;
-  
+
 __END__
 
-=for stopwords Ryde
+=for stopwords Ryde Pod-MinimumVersion pod-minimumversion
 
 =head1 NAME
 

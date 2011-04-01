@@ -32,9 +32,9 @@ my $script_filename = File::Spec->catfile ($FindBin::Bin, $FindBin::Script);
   my $pmv = Pod::MinimumVersion->new
     (
      # string => "use 5.010; =encoding\n",
-     string => "=encoding",
+     # string => "=encoding",
      # string => "=pod\n\nC<< foo >>",
-     # filename => $script_filename,
+     filename => $script_filename,
      # filehandle => do { require IO::String; IO::String->new("=pod\n\nE<sol> E<verbar>") },
      #  string => "=pod\n\nL<foo|bar>",
      one_report_per_version => 1,
@@ -59,9 +59,9 @@ use 5.002;
 
 __END__
 
-=encoding utf-8
+=head1 C<< NAME >>
 
-=head1 NAME
+=encoding utf-8
 
 x
 

@@ -31,7 +31,7 @@ require Pod::MinimumVersion::Report;
 
 #------------------------------------------------------------------------------
 {
-  my $want_version = 49;
+  my $want_version = 50;
   ok ($Pod::MinimumVersion::Report::VERSION, $want_version, 'VERSION variable');
   ok (Pod::MinimumVersion::Report->VERSION,  $want_version, 'VERSION class method');
   {

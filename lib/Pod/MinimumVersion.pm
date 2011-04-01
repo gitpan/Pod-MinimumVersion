@@ -26,7 +26,7 @@ use vars qw($VERSION @CHECKS);
 # uncomment this to run the ### lines
 #use Smart::Comments;
 
-$VERSION = 49;
+$VERSION = 50;
 
 sub new {
   my ($class, %self) = @_;
@@ -337,7 +337,7 @@ tools, so it's not important what C<pod2man> thinks of it.
 
 =over 4
 
-=item C<< $pmv = Pod::MinimumVersion->new (key => value, ...) >>
+=item C<$pmv = Pod::MinimumVersion-E<gt>new (key =E<gt> value, ...)>
 
 Create and return a new C<Pod::MinimumVersion> object which will analyze a
 document.  The document is supplied as one of
@@ -354,9 +354,9 @@ targeting, so reports are only about features above that level.
 
     above_version => '5.006',
 
-=item C<< $version = $pmv->minimum_version () >>
+=item C<$version = $pmv-E<gt>minimum_version ()>
 
-=item C<< $report = $pmv->minimum_report () >>
+=item C<$report = $pmv-E<gt>minimum_report ()>
 
 Return the minimum Perl required for the document in C<$pmv>.
 
@@ -364,7 +364,7 @@ C<minimum_version> returns a C<version> number object (see L<version>).
 C<minimum_report> returns a C<Pod::MinimumVersion::Report> object (see
 L</REPORT OBJECTS> below).
 
-=item C<< @reports = $pmv->reports () >>
+=item C<@reports = $pmv-E<gt>reports ()>
 
 Return a list of C<Pod::MinimumVersion::Report> objects concerning the
 document in C<$pmv>.

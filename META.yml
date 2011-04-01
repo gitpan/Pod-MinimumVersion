@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Pod-MinimumVersion
-version:            49
+version:            50
 abstract:           Determine minimum Perl version of POD directives.
 author:
     - Kevin Ryde <user42@zip.com.au>

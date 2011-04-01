@@ -24,7 +24,7 @@ use vars '$VERSION', '@ISA';
 use Pod::Parser;
 @ISA = ('Pod::Parser');
 
-$VERSION = 49;
+$VERSION = 50;
 
 # uncomment this to run the ### lines
 #use Smart::Comments;
@@ -58,6 +58,13 @@ sub parse_from_string {
   return $self->parse_from_filehandle ($fh);
 }
 
+my %command_does_not_interpolate = (for   => 1,   # free form text
+                                    begin => 1,   # formatname not text
+                                    end   => 1,
+                                    pod   => 1,   # text ignored
+                                    cut   => 1,   # text ignored
+                                    encoding => 1, # encoding name not text
+                                   );
 sub command {
   my ($self, $command, $text, $linenum, $paraobj) = @_;
   ### PMV command()
@@ -76,6 +83,10 @@ sub command {
 
     foreach my $func (@{$self->{'checks'}->{'command'}}) {
       $func->($self->{'pmv'}, $command, $text, $paraobj);
+    }
+
+    unless ($command_does_not_interpolate{$command}) {
+      $self->interpolate ($text, $linenum);
     }
   }
   return '';

@@ -28,5 +28,10 @@ eval { require Test::ConsistentVersion }
   or plan skip_all => "due to Test::ConsistentVersion not available -- $@";
 
 Test::ConsistentVersion::check_consistent_versions
-  (no_readme => ! -e 'README');
+  (no_readme => 1, # no version number in my READMEs
+   no_pod    => 1, # no version number in my docs, at the moment
+  );
+
+# ! -e 'README');
+
 exit 0;

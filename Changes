@@ -16,6 +16,9 @@ You can get a copy of the GNU General Public License online at
 <http://www.gnu.org/licenses/>.
 
 
+Version 50, April 2011
+    - fix detection of C<< in =item etc text parts
+
 Version 49, March 2011
     - separate dist from Perl-Critic-Pulp
     - document 5.12 L<text|URL>

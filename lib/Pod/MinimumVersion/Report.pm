@@ -22,7 +22,7 @@ use strict;
 use overload '""' => \&as_string;
 
 use vars '$VERSION';
-$VERSION = 49;
+$VERSION = 50;
 
 sub new {
   my ($class, %self) = @_;
